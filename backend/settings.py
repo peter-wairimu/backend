@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'accounts',
 
 ]
 
@@ -139,4 +140,4 @@ REST_FRAMEWORK = {
 
 
 
-LOGIN_REDIRECT_URL ='/'
+# LOGIN_REDIRECT_URL ='/'
