@@ -18,3 +18,15 @@ class User(AbstractBaseUser, PermissionsMixin):
 	REQUIRED_FIELDS = ['name', 'email']
 
 	objects = CustomUserManager()
+
+
+class Courses(models.Model):
+    courseId = models.AutoField(primary_key=True)
+    subjectName= models.CharField(max_length=255)
+
+class Pupil(models.Model):
+    pupilId = models.AutoField(primary_key=True)
+    pupilName = models.CharField(max_length=255)
+    std =models.CharField(max_length=50)
+    posted_date = models.DateTimeField()
+  

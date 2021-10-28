@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    '',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
@@ -156,10 +157,7 @@ REST_FRAMEWORK ={
 # LOGIN_REDIRECT_URL ='/'
 AUTH_USER_MODEL ='accounts.user'
 
-# CORS_ALLOWED_ORIGINS = [
 
-#     "http://localhost:4200",
-    
+CORS_ORIGIN_ALLOW_ALL = True
 
-# ]
 
