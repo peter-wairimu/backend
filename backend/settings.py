@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'user',
     'corsheaders',
     'rest_framework.authtoken',
+    'knox',
 
 ]
 
@@ -134,25 +135,30 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.DjangoModelPermissions',
-        'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.TokenAuthentication',
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': (
+#         'rest_framework.permissions.DjangoModelPermissions',
+#         'rest_framework.authentication.BasicAuthentication',
+#         'rest_framework.authentication.SessionAuthentication',
+#         'rest_framework.authentication.TokenAuthentication',
 
 
-    )
+#     )
+# }
+
+
+REST_FRAMEWORK ={
+    'DEFAULT_AUTHENTICATION_CLASSES':('knox.auth.TokenAuthentication',),
+    'UNICODE_JSON':False
 }
 
-
 # LOGIN_REDIRECT_URL ='/'
+AUTH_USER_MODEL ='accounts.user'
 
+# CORS_ALLOWED_ORIGINS = [
 
-CORS_ALLOWED_ORIGINS = [
-
-    "http://localhost:4200",
+#     "http://localhost:4200",
     
 
-]
+# ]
 
