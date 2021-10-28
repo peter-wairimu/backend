@@ -26,6 +26,13 @@ class Courses(models.Model):
     courseId = models.AutoField(primary_key=True)
     subjectName= models.CharField(max_length=255)
     description= models.CharField(max_length=1000)
-    posted_date = models.DateTimeField()
+    posted_date = models.DateTimeField(null=True, blank=True)
 	
 
+class Student(models.Model):
+	first_name = models.CharField(max_length=100)
+	last_name = models.CharField(max_length=100)
+	notes = models.TextField(max_length=1000)
+
+	def __str__(self):
+		return self.first_name
