@@ -13,6 +13,8 @@ class User(AbstractBaseUser, PermissionsMixin):
 	username = models.CharField(_('username'), unique=True, max_length=100)
 	is_staff = models.BooleanField(default=False)
 	is_active = models.BooleanField(default=True)
+	
+    
 
 	USERNAME_FIELD = 'username'
 	REQUIRED_FIELDS = ['name', 'email']
@@ -23,13 +25,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 class Courses(models.Model):
     courseId = models.AutoField(primary_key=True)
     subjectName= models.CharField(max_length=255)
-
-class Pupil(models.Model):
-    pupilId = models.AutoField(primary_key=True)
-    pupilName = models.CharField(max_length=255)
-    std =models.CharField(max_length=50)
+    description= models.CharField(max_length=1000)
     posted_date = models.DateTimeField()
 	
 
-
-  
