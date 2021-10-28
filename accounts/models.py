@@ -1,5 +1,5 @@
 from django.db import models
-
+from .managers import  CustomUserManager
 # Create your models here.
 
 from django.db import models
@@ -16,3 +16,5 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 	USERNAME_FIELD = 'username'
 	REQUIRED_FIELDS = ['name', 'email']
+
+	objects = CustomUserManager()
