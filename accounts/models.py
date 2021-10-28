@@ -29,4 +29,7 @@ class Pupil(models.Model):
     pupilName = models.CharField(max_length=255)
     std =models.CharField(max_length=50)
     posted_date = models.DateTimeField()
+	
+
+
   
