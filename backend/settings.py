@@ -158,6 +158,8 @@ REST_FRAMEWORK ={
 AUTH_USER_MODEL ='accounts.user'
 
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOWED_ORIGIN = [
+    'http://localhost:4200/'
+]
 
 

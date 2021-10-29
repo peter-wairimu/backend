@@ -1,5 +1,6 @@
 from django.db import models
 from .managers import  CustomUserManager
+from django.utils import timezone
 # Create your models here.
 
 from django.db import models
@@ -26,7 +27,7 @@ class Courses(models.Model):
     courseId = models.AutoField(primary_key=True)
     subjectName= models.CharField(max_length=255)
     description= models.CharField(max_length=1000)
-    posted_date = models.DateTimeField(null=True, blank=True)
+    posted_date = models.DateTimeField(default=timezone.now)
 	
 
 class Student(models.Model):

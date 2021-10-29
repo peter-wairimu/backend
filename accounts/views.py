@@ -1,11 +1,13 @@
 from .models import User,Courses
-from .serializers import LoginSerializer, RegisterSerializer, UserSerializer,CoursesSerializer
+from .serializers import LoginSerializer, RegisterSerializer, UserSerializer,CoursesSerializer,StudentSerializer
 from knox.models import AuthToken
 from rest_framework import generics, permissions
 from rest_framework.response import Response
 from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
 from django.http.response import JsonResponse
+from .models import Student
+
 class LoginAPI(generics.GenericAPIView):
 	serializer_class = LoginSerializer
 
@@ -77,3 +79,11 @@ def  coursesApi(request,id=0):
 
         
 
+class StudentList(generics.ListCreateAPIView):
+	queryset = Student.objects.all()
+	serializer_class = StudentSerializer
+
+
+class StudentDetail(generics.RetrieveUpdateDestroyAPIView):
+	quersets = Student.objects.all()
+	serializer_class = StudentSerializer

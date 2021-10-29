@@ -1,4 +1,4 @@
-from accounts.models import User,Courses
+from accounts.models import User,Courses,Student
 from django.contrib.auth import authenticate
 from rest_framework import serializers
 
@@ -41,5 +41,9 @@ class UserSerializer(serializers.ModelSerializer):
 class CoursesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Courses
-        fields =('courseId','subjectName','description')
+        fields =('courseId','subjectName','description','posted_date')
 
+class StudentSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Student
+		fields =('first_name','last_name','notes')
